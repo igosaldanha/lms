@@ -1,0 +1,116 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays</title>
+
+    <script>
+        function teste(){
+            alert("Teste");
+        }
+
+        function sena(){
+            let elem = document.getElementsByClassName("sena")[0];
+            elem.style.display = "none";
+
+        }
+
+        function joao(){
+            let elem = document.getElementsByClassName("joao")[0];
+            elem.style.visibility = "hidden";
+
+        }
+
+        function valdemir(){
+
+            let elemSena = document.getElementsByClassName("sena")[0];
+            elemSena.style.display = "block";
+
+            let elemJoao = document.getElementsByClassName("joao")[0];
+            elemJoao.style.visibility = "visible";
+
+        
+        }   
+
+    </script>
+
+    <style>
+        div.block {
+            border: 5px solid green;
+            margin: 30px;
+            padding: 20px;
+        }
+
+        span.inline {
+            border: 2px solid red;
+            margin: 0px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        div {
+            display: inline-block;
+            border: 4px solid green;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        div.sena{
+            display: block;
+
+        }
+
+        div.joao{
+            display: block;
+            
+        }
+
+        div.valdemir{
+            display: block;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Displays</h1>
+    <div class="block">
+        <p>Displays are used to change the layout of the elements. The display property specifies the type of box <span class="inline">used</span> for an HTML element.</p>
+    </div>
+    
+    <table>
+        <tr>
+            <td>
+                <div class="sena">
+                    <img src="https://www.quixada.ufc.br/wp-content/uploads/2015/05/David-Sena-Oliveira-Final1-113x150.png" alt="" width="180px" >
+                    <br>
+                    <button onclick="sena()">Remove</button>
+                </div>
+            </td>
+            <td>
+                <div class="joao">
+                    <img src="https://www.quixada.ufc.br/wp-content/uploads/2015/11/Jo%C3%A3o-113x150.png" alt="" width="180px" >
+                    <br>
+                    <button onclick="joao()">Hide</button>
+                </div>
+            </td>
+            <td>
+                <div class="valdemir">
+                    <img src="https://www.quixada.ufc.br/wp-content/uploads/2015/05/Valdemir-Pereira-de-Queiroz-Neto1-113x150.png" alt="" width="180px" >
+                    <br>
+                    <button onclick="valdemir()">Reset All</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    
+</body>
+</html>
