@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Flexbox Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .example {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+        }
+
+        .example h2 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            background-color: #e9ecef;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .container > div {
+            width: 100px;
+            height: 100px;
+            background-color: #6c757d;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Flex Direction */
+        .flex-row {
+            flex-direction: row;
+        }
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        /* Justify Content */
+        .justify-start {
+            justify-content: flex-start;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-end {
+            justify-content: flex-end;
+        }
+
+        .justify-space-between {
+            justify-content: space-between;
+        }
+
+        .justify-space-around {
+            justify-content: space-around;
+        }
+
+        .justify-space-evenly {
+            justify-content: space-evenly;
+        }
+
+        /* Align Items */
+        .align-start {
+            align-items: flex-start;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .align-end {
+            align-items: flex-end;
+        }
+
+        .align-stretch {
+            align-items: stretch;
+        }
+
+        .align-baseline {
+            align-items: baseline;
+        }
+
+        /* Wrap */
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .no-wrap {
+            flex-wrap: nowrap;
+        }
+
+        .wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+
+        /* Align Content */
+        .align-content-start {
+            align-content: flex-start;
+        }
+
+        .align-content-center {
+            align-content: center;
+        }
+
+        .align-content-end {
+            align-content: flex-end;
+        }
+
+        .align-content-space-between {
+            align-content: space-between;
+        }
+
+        .align-content-space-around {
+            align-content: space-around;
+        }
+
+        .align-content-stretch {
+            align-content: stretch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="example">
+        <h2>Flex Direction</h2>
+        <div class="container flex-row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container flex-column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>Justify Content</h2>
+        <div class="container justify-start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container justify-center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container justify-end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container justify-space-between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container justify-space-around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container justify-space-evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>Align Items</h2>
+        <div class="container align-start" style="height: 200px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container align-center" style="height: 200px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container align-end" style="height: 200px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container align-stretch" style="height: 200px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container align-baseline" style="height: 200px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>Flex Wrap</h2>
+        <div class="container flex-wrap" style="width: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="container no-wrap" style="width: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="container wrap-reverse" style="width: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>Align Content</h2>
+        <div class="container flex-wrap align-content-start" style="height: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="container flex-wrap align-content-center" style="height: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="container flex-wrap align-content-end" style="height: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="container flex-wrap align-content-space-between" style="height: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="container flex-wrap align-content-space-around" style="height: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="container flex-wrap align-content-stretch" style="height: 300px;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </div>
+</body>
+
+</html>
+

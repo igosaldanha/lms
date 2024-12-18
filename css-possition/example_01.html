@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 100px;
+            height: 50px;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+        }
+
+        .static {
+            background-color: #3498db;
+        }
+
+        .relative {
+            background-color: #e74c3c;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .fixed {
+            background-color: #2ecc71;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        .absolute {
+            background-color: #f1c40f;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+
+        .sticky {
+            background-color: #9b59b6;
+            position: sticky;
+            top: 0;
+        }
+
+        .scroll-container {
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+        }
+
+        .content {
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Positioning Examples</h1>
+
+<!-- Static -->
+<div class="container">
+    <div class="box static">Static</div>
+    <p>Static is the default positioning. The element stays in the normal document flow.</p>
+</div>
+
+<!-- Relative -->
+<div class="container">
+    <div class="box relative">Relative</div>
+    <p>Relative positioning moves the element relative to its original position.</p>
+</div>
+
+<!-- Fixed -->
+<div class="container">
+    <div class="box fixed">Fixed</div>
+    <p>Fixed positioning keeps the element in the same spot, even when scrolling.</p>
+</div>
+
+<!-- Absolute -->
+<div class="container">
+    <div class="box absolute">Absolute</div>
+    <p>Absolute positioning moves the element relative to the nearest positioned ancestor.</p>
+</div>
+
+<!-- Sticky -->
+<div class="scroll-container">
+    <div class="box sticky">Sticky</div>
+    <div class="content">
+        <p>Scroll down to see the sticky element in action. It behaves like relative until it reaches the defined offset, then it sticks to the top of the scroll container.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, main, footer {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+        section, article, aside {
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>Welcome to the Semantic HTML Guide</h1>
+        <p>The <code>&lt;header&gt;</code> tag represents introductory content or a set of navigation links. It typically contains a logo, heading, and sometimes a brief introduction.</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <p>The <code>&lt;nav&gt;</code> tag is used for navigation links. It provides a way to navigate the site and is commonly used for menus or tables of contents:</p>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#main-content">Main Content</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <h2 id="introduction">Introduction</h2>
+        <p>The <code>&lt;main&gt;</code> tag is used for the dominant content of the <strong>body</strong>. This is where the main, unique content of a document resides.</p>
+
+        <!-- SECTION -->
+        <section>
+            <h3>What is Semantic HTML?</h3>
+            <p>The <code>&lt;section&gt;</code> tag defines a thematic grouping of content, typically with a heading. It is used to break up content into sections that are logically related.</p>
+        </section>
+
+        <!-- ARTICLE -->
+        <article>
+            <h3>Understanding <code>&lt;article&gt;</code></h3>
+            <p>The <code>&lt;article&gt;</code> tag represents self-contained content that can be independently distributed or reused. Common examples include blog posts, news articles, or forum posts.</p>
+        </article>
+
+        <!-- ASIDE -->
+        <aside>
+            <h3>Using <code>&lt;aside&gt;</code></h3>
+            <p>The <code>&lt;aside&gt;</code> tag is for content related to the main content but not essential to it, such as sidebars, callout boxes, or related links.</p>
+        </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2 id="conclusion">Conclusion</h2>
+        <p>The <code>&lt;footer&gt;</code> tag is used for footer content, such as copyright information, links to related documents, or contact details. It often appears at the bottom of a page or section.</p>
+        <p>Copyright &copy; 2024 Semantic HTML Guide. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
