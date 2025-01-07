@@ -4,8 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            width: 80%;
+            margin-top: 50px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 2rem;
+        }
+
+        .title {
+            font-size: 2rem;
+            color: #333;
+        }
+        button {
+            padding: 10px 50px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 0.7rem;
+            cursor: pointer;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+
 </head>
 <body>
+
+    <div class="container">
+
+        <h1 class="title">Meu Cabeçalho</h1>
+        <p id="meuP">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo provident soluta velit exercitationem facilis dolorum maxime incidunt laboriosam? Dolores officiis nam aut aliquam. Non, ipsum? Eius voluptates provident quam atque.</p>
+    
+        <p>Segundo paragrafo</p>
+        <p>Terceiro paragrafo</p>
+        <p>Quarto paragrafo</p>
+    
+        <button onclick="changeTitle()">Titulo</button>
+        <button onclick="changeText()">Mudar paragrafos</button>
+
+    </div>
+
+    
+
+
+    <script>
+
+        let a = document.getElementById('meuP');
+        let b = document.getElementsByTagName('p');
+        let c = document.getElementsByClassName('title');
+
+        function changeText() {
+
+            for (let i = 0; i < b.length; i++) {
+                b[i].innerHTML = 'Modifcando Paragrafo';
+            }
+            
+        }
+
+        function changeTitle() {
+            c[0].innerHTML = 'Modificando Titulo';
+        }
+
+        
+
+
+    </script>
     
 </body>
 </html>
