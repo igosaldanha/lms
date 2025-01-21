@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Controle de Posição</title>
+  <title>Q03 - Controle de Posição</title>
   <style>
     .container {
       width: 200px;
@@ -29,25 +29,25 @@
   <div class="container">
     <div class="absolute"></div>
   </div>
-  <button id="cima">CIMA</button>
-  <button id="baixo">BAIXO</button>
-  <button id="esquerda">ESQUERDA</button>
-  <button id="direita">DIREITA</button>
+  <button onclick="moverCima()" id="cima">CIMA</button>
+  <button onclick="moverBaixo()" id="baixo">BAIXO</button>
+  <button onclick="moverEsquerda()" id="esquerda">ESQUERDA</button>
+  <button onclick="moverDireita()" id="direita">DIREITA</button>
 
   <script>
-    // Função para mover a div amarela para cima
+    
     function moverCima() {
       var divAmarela = document.getElementsByClassName('absolute')[0];
       var container = document.getElementsByClassName('container')[0];
       var topAtual = parseInt(window.getComputedStyle(divAmarela).top);
 
-      // Garantir que a div amarela não ultrapasse o limite superior da div vermelha
+      
       if (topAtual > 0) {
         divAmarela.style.top = (topAtual - 10) + 'px';
       }
     }
 
-    // Função para mover a div amarela para baixo
+    
     function moverBaixo() {
       var divAmarela = document.getElementsByClassName('absolute')[0];
       var container = document.getElementsByClassName('container')[0];
@@ -55,24 +55,21 @@
       var alturaContainer = container.offsetHeight;
       var alturaDivAmarela = divAmarela.offsetHeight;
 
-      // Garantir que a div amarela não ultrapasse o limite inferior da div vermelha
       if (topAtual + alturaDivAmarela < alturaContainer) {
         divAmarela.style.top = (topAtual + 10) + 'px';
       }
     }
 
-    // Função para mover a div amarela para a esquerda
+    
     function moverEsquerda() {
       var divAmarela = document.getElementsByClassName('absolute')[0];
       var leftAtual = parseInt(window.getComputedStyle(divAmarela).left);
 
-      // Garantir que a div amarela não ultrapasse o limite esquerdo da div vermelha
       if (leftAtual > 0) {
         divAmarela.style.left = (leftAtual - 10) + 'px';
       }
     }
 
-    // Função para mover a div amarela para a direita
     function moverDireita() {
       var divAmarela = document.getElementsByClassName('absolute')[0];
       var container = document.getElementsByClassName('container')[0];
@@ -80,17 +77,11 @@
       var larguraContainer = container.offsetWidth;
       var larguraDivAmarela = divAmarela.offsetWidth;
 
-      // Garantir que a div amarela não ultrapasse o limite direito da div vermelha
       if (leftAtual + larguraDivAmarela < larguraContainer) {
         divAmarela.style.left = (leftAtual + 10) + 'px';
       }
     }
 
-    // Adiciona os eventos de clique nos botões
-    document.getElementById('cima').onclick = moverCima;
-    document.getElementById('baixo').onclick = moverBaixo;
-    document.getElementById('esquerda').onclick = moverEsquerda;
-    document.getElementById('direita').onclick = moverDireita;
   </script>
 </body>
 </html>
