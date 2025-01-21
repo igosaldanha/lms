@@ -9,10 +9,23 @@
 
 <body>
     <h1>Troque a Imagem</h1>
-    <img id="imagem" src="imagem1.jpg" alt="Imagem 1" width="300">
+    <img id="imagem" src="imagem-01.jpeg" alt="Imagem 1" width="300">
     <br>
-    <button id="botao">Trocar Imagem</button>
-    <script> </script>
+    <button onclick="trocarImagem()" id="botao">Trocar Imagem</button>
+
+    <script>
+
+        function trocarImagem() {
+            var img = document.getElementById('imagem');
+
+            if (img.src.includes('imagem-01.jpeg')) {
+                img.src = 'imagem-02.jpeg';
+            } else {
+                img.src = 'imagem-01.jpeg';
+            }
+        }
+
+    </script>
 </body>
 
 </html>

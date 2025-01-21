@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Posição</title>
+  <style>
+    .container {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: relative;
+    }
+    .absolute {
+      width: 50px;
+      height: 50px;
+      background-color: yellow;
+      position: absolute;
+      top: 75px;
+      left: 75px;
+    }
+    button {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Controle de Posição</h1>
+  <div class="container">
+    <div class="absolute"></div>
+  </div>
+  <button id="cima">CIMA</button>
+  <button id="esquerda">ESQUERDA</button>
+
+  <script>
+    // Função para mover a div amarela para cima
+    function moverCima() {
+      var divAmarela = document.getElementsByClassName('absolute')[0];
+      var topAtual = parseInt(window.getComputedStyle(divAmarela).top);
+      divAmarela.style.top = (topAtual - 10) + 'px'; // Move 10px para cima
+    }
+
+    // Função para mover a div amarela para a esquerda
+    function moverEsquerda() {
+      var divAmarela = document.getElementsByClassName('absolute')[0];
+      var leftAtual = parseInt(window.getComputedStyle(divAmarela).left);
+      divAmarela.style.left = (leftAtual - 10) + 'px'; // Move 10px para a esquerda
+    }
+
+    // Adiciona os eventos de clique nos botões
+    document.getElementById('cima').onclick = moverCima;
+    document.getElementById('esquerda').onclick = moverEsquerda;
+  </script>
+</body>
+</html>
