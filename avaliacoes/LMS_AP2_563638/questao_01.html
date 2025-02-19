@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 01</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        header,
+        nav,
+        main,
+        aside,
+        footer {
+            width: 80%;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header,
+        footer {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+        }
+
+        section,
+        article,
+        aside {
+            flex: 1;
+            margin: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 10px 0px;
+            padding: 0;
+        }
+
+        .highlight {
+            color: #FF5722;
+        }
+
+        img {
+            max-width: 300px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Site sobre Cachorros</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#section1">Raças</a></li>
+            <li><a href="#section2">Cuidados</a></li>
+            <li><a href="#section3">Alimentação</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="section1">
+            <h2>Raças de Cachorros</h2>
+            <article>
+                <h3>Labrador</h3>
+                <img id="image-labrador" src="labrador-01.jpg" alt="Labrador">
+                <p>O Labrador é uma raça amigável e ativa.</p>
+                <button id="bnt-labrador">Próxima Imagem</button>
+            </article>
+            <article>
+                <h3>Bulldog</h3>
+                <img class="image-buldog" src="buldog-01.jpeg" alt="Bulldog">
+                <p>O Bulldog é conhecido por sua aparência robusta e temperamento calmo.</p>
+                <button id="btn-buldog">Próxima Imagem</button>
+            </article>
+        </section>
+        <aside>
+            <h2>Curiosidades</h2>
+            <p id="curiosidade">Os cachorros têm um olfato extremamente apurado.</p>
+            <button onclick="mudarCuriosidade()">Clique para mudar a curiosidade</button>
+
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2025 Site sobre Cachorros. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+
+        // Selecionando elementos do DOM
+
+        const btnLabrador = document.getElementById('bnt-labrador');
+        const btnBuldog = document.getElementById('btn-buldog');
+        const imgLabrador = document.getElementById('image-labrador');
+        const imgBuldog = document.querySelector('.image-buldog');
+
+        // Função para mudar a curiosidade
+
+        function mudarCuriosidade() {
+            const curiosidade = document.getElementById('curiosidade');
+            if (curiosidade.textContent === 'Os cachorros têm um olfato extremamente apurado.') {
+                curiosidade.textContent = 'Os cachorros são animais muito leais.';
+            } else {
+                curiosidade.textContent = 'Os cachorros têm um olfato extremamente apurado.';
+            }
+        }
+
+        // Adicionando evento de clique no botão do Labrador
+
+        btnLabrador.addEventListener('click', function () {
+
+            if (imgLabrador.src.includes('labrador-01.jpg')) {
+                imgLabrador.src = 'labrador-02.jpg';
+            } else {
+                imgLabrador.src = 'labrador-01.jpg';
+            }
+
+        });
+
+        // Adicionando evento de clique no botão do Bulldog
+
+        btnBuldog.addEventListener('click', function () {
+
+            if (imgBuldog.src.includes('buldog-01.jpeg')) {
+                imgBuldog.src = 'buldog-02.jpg';
+            } else {
+                imgBuldog.src = 'buldog-01.jpeg';
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

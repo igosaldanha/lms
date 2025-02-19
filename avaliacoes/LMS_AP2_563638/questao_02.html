@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 02</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .color-div {
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+
+        .color-div:nth-child(2) { background-color: #33FF57; }
+        .color-div:nth-child(3) { background-color: #3357FF; }
+        .color-div:nth-child(4) { background-color: #FF33A1; }
+        .color-div:nth-child(5) { background-color: #dbc711; }
+        .color-div:nth-child(6) { background-color: #d61c16; }
+
+        button {
+            margin: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Mudar visibilidade da Div</h1>
+
+    <div class="color-div">Lorem ipsum 1</div>
+    <div class="color-div">Lorem ipsum 2</div>
+    <div class="color-div">Lorem ipsum 3</div>
+    <div class="color-div">Lorem ipsum 4</div>
+    <div class="color-div">Lorem ipsum 5</div>
+
+    <input type="number" id="div-number" min="1" max="5" placeholder="Enter a number (1-5)">
+    <button onclick="toggleDiv()">OK</button>
+    <script>
+
+        // Função para alternar a visibilidade da div
+
+        function toggleDiv() {
+            const number = document.getElementById('div-number').value;
+            if (number >= 1 && number <= 5) {
+                const divs = document.getElementsByClassName('color-div');
+                const div = divs[number - 1];
+                if (div.style.visibility === 'hidden') {
+                    div.style.visibility = 'visible';
+                } else {
+                    div.style.visibility = 'hidden';
+                }
+            } else {
+                alert('Digite somente numeros entre 1 e 5');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 04</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        h3 {
+            margin: 10px 0;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dados da COVID-19</h2>
+
+    <h3 id="highestCases">Estado com mais casos: </h3>
+    <h3 id="lowestCases">Estado com menos casos: </h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th id="stateHeader">Estado</th>
+                <th id="casesHeader">Casos</th>
+            </tr>
+        </thead>
+        <tbody id="covidData"></tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", fetchCovidData);
+
+        async function fetchCovidData() {
+            const url = `https://covid19-brazil-api.now.sh/api/report/v1`;
+
+            try {
+
+                // Busca os dados da API
+                const response = await fetch(url);
+                const data = await response.json();
+                const statesData = Array.isArray(data.data) ? data.data : [data.data];
+
+                // Cria a tabela com os dados buscados
+                document.getElementById("covidData").innerHTML = statesData.map(stateData => `
+                    <tr>
+                        <td>${stateData.state}</td>
+                        <td>${stateData.cases.toLocaleString()}</td>
+                    </tr>
+                `).join('');
+
+                // Atualiza os estados com mais e menos casos
+                if (statesData.length > 0) {
+                    const highestCases = statesData.reduce((max, state) => state.cases > max.cases ? state : max, statesData[0]);
+                    const lowestCases = statesData.reduce((min, state) => state.cases < min.cases ? state : min, statesData[0]);
+
+                    document.getElementById("highestCases").innerText = `Estado com mais casos: ${highestCases.state} (${highestCases.cases.toLocaleString()})`;
+                    document.getElementById("lowestCases").innerText = `Estado com menos casos: ${lowestCases.state} (${lowestCases.cases.toLocaleString()})`;
+                }
+            } catch (error) {
+                alert("Erro ao buscar os dados.");
+            }
+        }
+    </script>
+</body>
+</html>

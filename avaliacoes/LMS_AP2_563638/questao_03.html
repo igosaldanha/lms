@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 03</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h2 {
+            color: #333;
+        }
+        label, input, button {
+            margin: 5px;
+        }
+        input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Consultar Pokémon por Intervalo</h2>
+    <label for="start">Início:</label>
+    <input type="number" id="start" min="1" max="100" value="1">
+    <label for="end">Fim:</label>
+    <input type="number" id="end" min="1" max="100" value="10">
+    <button onclick="fetchPokemon()">Buscar</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Imagem</th>
+            </tr>
+        </thead>
+        <tbody id="pokemonTable"></tbody>
+    </table>
+
+    <script>
+        async function fetchPokemon() {
+            // Seleciona os elementos da DOM
+            const start = parseInt(document.getElementById("start").value);
+            const end = parseInt(document.getElementById("end").value);
+            const tbody = document.getElementById("pokemonTable");
+
+            tbody.innerHTML = "";
+
+            // Valida o intervalo
+            if (start < 1 || end > 100 || start > end) {
+                alert("Insira um intervalo válido (1 a 100).");
+                return;
+            }
+
+            // Faz a requisição dos pokémons
+            for (let i = start; i <= end; i++) {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+                const data = await response.json();
+
+                // Cria uma nova linha na tabela para cada pokémon
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${data.name}</td>
+                    <td><img src="${data.sprites.front_default}" alt="${data.name}"></td>
+                `;
+                tbody.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
